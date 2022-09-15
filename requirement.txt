@@ -1,9 +1,0 @@
-torch
-torchaudio
-numpy
-librosa
-scipy
-pesq
-matplotlib
-librosa
-librosa.display
