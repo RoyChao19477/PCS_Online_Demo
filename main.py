@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 import librosa
 import librosa.display
 
+from PIL import Image
 
 
 # ------- init setting -------
