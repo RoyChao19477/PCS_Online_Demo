@@ -6,4 +6,3 @@ scipy
 pesq
 matplotlib
 librosa
-librosa.display
