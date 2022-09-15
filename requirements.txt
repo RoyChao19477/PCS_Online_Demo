@@ -6,3 +6,4 @@ pesq
 librosa
 torch
 torchaudio
+soundfile
