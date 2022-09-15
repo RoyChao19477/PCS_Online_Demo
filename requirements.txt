@@ -1,9 +1,8 @@
-torch
-torchaudio
+streamlit
+matplotlib
 numpy
-librosa
 scipy
 pesq
-matplotlib
 librosa
-streamlit
+torch
+torchaudio
