@@ -1,7 +1,5 @@
-import time
 import streamlit as st
 import numpy as np
-import pandas as pd
 import scipy
 
 import torch
@@ -14,7 +12,6 @@ import matplotlib.pyplot as plt
 import librosa
 import librosa.display
 
-from PIL import Image
 
 
 # ------- init setting -------
