@@ -6,3 +6,4 @@ scipy
 pesq
 matplotlib
 librosa
+streamlit
