@@ -218,6 +218,7 @@ elif topic == '(3) Original PP-PCS (with tunable parameters)':
             torch.stack([f_x, f_o]).permute(1,0).numpy(),
             columns=['Your Gamma-PCS', 'Original Gamma-PCS'])
     st.area_chart(chart_data)
+    st.caption("X-axis: Frequency (Hz); Y-axis: Gamma values")
     
 
 
