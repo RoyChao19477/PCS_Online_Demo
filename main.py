@@ -321,4 +321,5 @@ with col2:
         draw(enhanced_wav, 'noisy/enhanced')
 
 st.warning('We currently only support monaural audio.')
-st.warning('If your audio is not 16k sample rate, the audio will be resampled to 16k to perform PP-PCS and convert back')
+st.warning('We currently assign PP-PCS at 16k sample rate. So if your audio is not 16k sample rate, the audio will be resampled to 16k to do PP-PCS and convert back.')
+#st.warning('We currently assigned If your audio is not 16k sample rate, the audio will be resampled to 16k to perform PP-PCS and convert back')
