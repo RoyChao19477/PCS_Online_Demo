@@ -176,7 +176,7 @@ elif topic == '(3) Original PP-PCS (with tunable parameters)':
     with colG2:
         g_max = st.slider(
                 'Maximum of gamma:',
-                g_min, 5.0, value=1.4, step=0.01)
+                0.0, 5.0, value=1.4, step=0.01)
     if g_min >= g_max:
         st.error('Error: Minimum should smaller than maximum', icon="🚨")
     else:
