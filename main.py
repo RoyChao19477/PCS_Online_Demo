@@ -8,6 +8,8 @@ import torchaudio
 import io
 
 from pesq import pesq
+import soundfile as sf
+from pystoi import stoi
 
 import matplotlib.pyplot as plt
 import librosa
@@ -279,7 +281,9 @@ with col1:
         st.write("Enhanced/Noisy audio:")
         noisy, sr = torchaudio.load(io.BytesIO(enh_wav))
         noisy = noisy/noisy.abs().max()
+        len_min = clean.size(1) if clean.size(1) < noisy.size(1) else noisy.size(1)
         st.info(f"PESQ score: {pesq(sr, clean.squeeze(0).numpy(), noisy.squeeze(0).numpy(), 'wb')}")
+        st.info(f"STOI score: {stoi(clean.squeeze(0)[:len_min].numpy(), noisy.squeeze(0)[:len_min].numpy(), sr, extended=False)}")
         st.audio(enh_wav, format='audio/wav')
         draw(enh_wav, 'noisy/enhanced')
 
@@ -290,8 +294,10 @@ with col2:
         enhanced_wav = SP_to_wav(noisy_LP, Nphase, signal_length, n_fft, hop_length)
         enhanced_wav = enhanced_wav/enhanced_wav.abs().max()
 
+        len_min = clean.size(1) if clean.size(1) < enhanced_wav.size(0) else enhanced_wav.size(0)
         st.write("Enhanced/Noisy + PP-PCS/PP-PCS400 audio:")
         st.info(f"PESQ score: {pesq(sr, clean.squeeze(0).numpy(), enhanced_wav.squeeze(0).numpy(), 'wb')}")
+        st.info(f"STOI score: {stoi(clean.squeeze(0)[:len_min].numpy(), enhanced_wav.squeeze(0)[:len_min].numpy(), sr, extended=False)}")
 
         torchaudio.save(
             'cache/cache1.wav',
