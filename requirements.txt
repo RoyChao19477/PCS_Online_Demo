@@ -8,3 +8,4 @@ librosa
 torch
 torchaudio
 soundfile
+pystoi
