@@ -20,8 +20,7 @@ from PIL import Image
 st.set_page_config(
     page_title="Perceptual Contrast Stretching on Target Feature for Speech Enhancements : Post-processing PCS",
     #page_icon="random",
-    #page_icon=Image.open('figs/icon_CITI.jpeg'),
-    page_icon=Image.open('figs/CITI_LOGO.png'),
+    page_icon=Image.open('figs/icon_CITI.jpeg'),
     layout="centered",
     initial_sidebar_state="collapsed",
 )
