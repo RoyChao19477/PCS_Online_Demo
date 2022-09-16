@@ -8,6 +8,9 @@ You can benefit from :
 2. Check whether PCS can further boost your SE results under a minute.
 3. Select the best tunable parameters for PCS online
 
+## Screenshot
+<img src="https://github.com/RoyChao19477/PCS_Online_Demo/blob/main/figs/screenshot_1.png" height="144">  
+
 ## How to use?
 #### Online website (suggested)
 - browse website directly: [https://lojoffy-pcs-online-demo-main-luu0rc.streamlitapp.com/](https://lojoffy-pcs-online-demo-main-luu0rc.streamlitapp.com/)
