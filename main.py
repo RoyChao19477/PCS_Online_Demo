@@ -198,7 +198,6 @@ elif topic == '(3) Original PP-PCS (with tunable parameters)':
     f_x[6400:7700] = PCS[200]
     f_x[7700:8000] = PCS[241]
 
-    """
     f_o = torch.ones(8000)
     f_o[0:100] = 1
     f_o[100:200] = 1.070175439
@@ -209,12 +208,11 @@ elif topic == '(3) Original PP-PCS (with tunable parameters)':
     f_o[5300:6400] = 1.238596491
     f_o[6400:7700] = 1.161403509
     f_o[7700:8000] = 1.077192982
-    """
 
 
     chart_data = pd.DataFrame(
-            f_x.numpy(),
-            columns=['Gamma-PCS'])
+            torch.stack([f_x, f_o]).permute(1,0).numpy(),
+            columns=['Your Gamma-PCS', 'Original Gamma-PCS'])
     st.area_chart(chart_data)
     
 
