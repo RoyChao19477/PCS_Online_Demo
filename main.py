@@ -233,7 +233,7 @@ with colU2:
     if enh_wav_f is not None:
         enh_wav = enh_wav_f.read()
 
-colA, colB = st.columns(2)
+colA, colB, colC, colD = st.columns(4)
 with colA:
     if st.button("Use sample audio A"):
         st.write("A sample from VoiceBank-DEMAND dataset was adopted.")
@@ -250,7 +250,6 @@ with colB:
         enh_wav_f = open('audio/p232_005_enh.wav', 'rb')
         enh_wav = enh_wav_f.read()
 
-colC, colD = st.columns(2)
 with colC:
     if st.button("Use sample audio C"):
         st.write("A sample from VoiceBank-DEMAND dataset was adopted.")
