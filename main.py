@@ -5,6 +5,7 @@ import pandas as pd
 
 import torch
 import torchaudio
+import torchaudio.transforms as T
 import io
 
 from pesq import pesq
@@ -290,9 +291,17 @@ with col1:
 with col2:
     if enh_wav is not None:
         noisy, sr = torchaudio.load(io.BytesIO(enh_wav))
+        if sr != 16000:
+            resampler = T.Resample(sr, 16000, dtype=waveform.dtype)
+            noisy = resampler(noisy)
+
         noisy_LP, Nphase, signal_length = Sp_and_phase(noisy.squeeze(), PCS, n_fft, hop_length)
         enhanced_wav = SP_to_wav(noisy_LP, Nphase, signal_length, n_fft, hop_length)
         enhanced_wav = enhanced_wav/enhanced_wav.abs().max()
+
+        if sr != 16000:
+            resampler = T.Resample(16000, sr, dtype=waveform.dtype)
+            enhanced_wav = resampler(enhanced_wav)
 
         len_min = clean.size(1) if clean.size(1) < enhanced_wav.size(0) else enhanced_wav.size(0)
         st.write("Enhanced/Noisy + PP-PCS/PP-PCS400 audio:")
@@ -311,3 +320,5 @@ with col2:
         st.audio(enhanced_wav, format='audio/wav')
         draw(enhanced_wav, 'noisy/enhanced')
 
+st.warning('We currently only support monaural audio.')
+st.warning('If your audio is not 16k sample rate, the audio will be resampled to 16k to perform PP-PCS and convert back')
