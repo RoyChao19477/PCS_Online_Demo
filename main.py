@@ -222,13 +222,16 @@ elif topic == '(3) Original PP-PCS (with tunable parameters)':
 st.subheader("You can upload the audio manually here or use the sample audio.")
 clean_wav, enh_wav = None, None
     
-clean_wav_f = st.file_uploader("Upload Clean Audio", type=['.wav', '.mp3'], accept_multiple_files=False)
-if clean_wav_f is not None:
-    clean_wav = clean_wav_f.read()
+colU1, colU2 = st.columns(2)
+with colU1:
+    clean_wav_f = st.file_uploader("Upload Clean Audio", type=['.wav', '.mp3'], accept_multiple_files=False)
+    if clean_wav_f is not None:
+        clean_wav = clean_wav_f.read()
 
-enh_wav_f = st.file_uploader("Upload Noisy or Enhanced Audio", type=['.wav', '.mp3'], accept_multiple_files=False)
-if enh_wav_f is not None:
-    enh_wav = enh_wav_f.read()
+with colU2:
+    enh_wav_f = st.file_uploader("Upload Noisy or Enhanced Audio", type=['.wav', '.mp3'], accept_multiple_files=False)
+    if enh_wav_f is not None:
+        enh_wav = enh_wav_f.read()
 
 colA, colB = st.columns(2)
 with colA:
