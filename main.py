@@ -217,7 +217,7 @@ elif topic == '(3) Original PP-PCS (with tunable parameters)':
     chart_data = pd.DataFrame(
             torch.stack([f_x, f_o]).permute(1,0).numpy(),
             columns=['Your Gamma-PCS', 'Original Gamma-PCS'])
-    st.area_chart(chart_data)
+    st.area_chart(chart_data, x="Frequency", y="Gamma values")
     
 
 
