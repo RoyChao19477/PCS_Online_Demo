@@ -2,6 +2,7 @@ streamlit
 matplotlib
 numpy
 scipy
+pandas
 pesq
 librosa
 torch
