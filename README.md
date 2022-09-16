@@ -9,7 +9,7 @@ You can benefit from :
 3. Select the best tunable parameters for PCS online
 
 ## Screenshot
-<img src="https://github.com/RoyChao19477/PCS_Online_Demo/blob/main/figs/screenshot_1.png" height="144">  
+<img src="https://github.com/RoyChao19477/PCS_Online_Demo/blob/main/figs/screenshot_1.png">  
 
 ## How to use?
 #### Online website (suggested)
