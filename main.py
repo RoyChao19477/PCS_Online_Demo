@@ -319,7 +319,7 @@ with col2:
         enhanced_wav = enhanced_wav_f.read()
 
         st.audio(enhanced_wav, format='audio/wav')
-        draw(enhanced_wav, 'noisy/enhanced')
+        draw(enhanced_wav, 'noisy/enhanced + PP-PCS/PP-PCS400')
 
 st.warning('We currently only support monaural audio.')
 st.warning('We currently assign PP-PCS at 16k sample rate. So if your audio is not 16k sample rate, the audio will be resampled to 16k to do PP-PCS and convert back.')
