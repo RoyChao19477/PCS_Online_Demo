@@ -35,9 +35,9 @@ st.subheader("Post-processing PCS")
 # select box:
 topic = st.selectbox("Select a PP-PCS version",
         (
-            '(1) Original PP-PCS', 
-            '(2) PP-PCS400',
-            '(3) Original PP-PCS (with tunable parameters)'
+            '(1) PP-PCS', 
+            '(2) PP-PCS400 (Beta)',
+            '(3) PP-PCS (with tunable parameters)'
         )
     )
 
@@ -106,7 +106,7 @@ def draw(name, title):
   st.pyplot(fig)
 
 # ------- HW1 - 1 -------
-if topic == '(1) Original PP-PCS':
+if topic == '(1) PP-PCS':
     st.header("PP-PCS")
 
     n_fft = 512
@@ -123,7 +123,7 @@ if topic == '(1) Original PP-PCS':
     PCS[200:241] = 1.161403509
     PCS[241:256] = 1.077192982
 
-elif topic == '(2) PP-PCS400':
+elif topic == '(2) PP-PCS400 (Beta)':
     st.header("PP-PCS400")
     
     n_fft = 400
@@ -140,7 +140,7 @@ elif topic == '(2) PP-PCS400':
     PCS[160:190] = 1.161403509
     PCS[190:202] = 1.077192982
 
-elif topic == '(3) Original PP-PCS (with tunable parameters)':
+elif topic == '(3) PP-PCS (with tunable parameters)':
     st.header("PP-PCS tunable parameters")
 
     n_fft = 512
